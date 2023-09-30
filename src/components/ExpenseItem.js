@@ -1,4 +1,5 @@
 import ExpenseDate from './ExpenseDate';
+import Card from './Card';
 import './ExpenseItem.css';
 
 function ExpenseItem(props) {
@@ -6,7 +7,7 @@ function ExpenseItem(props) {
   // PROPS ES EL OBJETO QUE LLEVA TODOS LOS CAMPOS
 
   return (
-    <div className="expense-item">
+    <Card className="expense-item">
       {/* OJO AL SER UN OBJETO FECHA SE DEBE CONVERTIR A ISOString */}
       {/* <div>{props.date.toISOString()}</div> */}
       <ExpenseDate date={props.date} />
@@ -15,7 +16,7 @@ function ExpenseItem(props) {
 
         <div className="expense-item__price">${props.amount}</div>
       </div>
-    </div>
+    </Card>
   );
 }
 
