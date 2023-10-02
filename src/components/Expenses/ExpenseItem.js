@@ -11,8 +11,8 @@ const ExpenseItem = (props) => {
   // por eso al hacer click en uno no afecta a otro componente
   // State es una funcion POR COMPONENTE LLAMADO
   // se usa setTitle para reevaluar el componente con una nuevo valor para la variable
-  // React no reinicializa el State...por eso el valor cambia! aun al recargarse nuevamente
-  // al componente
+  // React no reinicializa el State...por eso el valor cambia! aun al reejecutarse nuevamente
+  // al componente con el setTitle()
 
   const [title, setTitle] = useState(props.title);
   console.log('Expense Item reevaluated by React');
