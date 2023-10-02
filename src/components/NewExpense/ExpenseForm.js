@@ -6,20 +6,42 @@ const ExpenseForm = () => {
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
+
+  // ALTERNATIVA USAR oneState
+  // const [userInput, setUserInput] = useState({
+  //   enteredTitle: '',
+  //   enteredAmount: '',
+  //   enteredDate: '',
+  // });
+
   // antes
   // document.getElementById('').addEventListener('click',(event)=>{})
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
-    console.log(event.target.value);
+    // console.log(event.target.value);
+
+    // ALTERNATIVA
+    // setUserInput = (prevState) => {
+    //   return { ...prevState, enteredTitle: event.target.value };
+    // };
   };
 
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
+    // ALTERNATIVA
+    // setUserInput = (prevState) => {
+    //   return { ...prevState, enteredAmount: event.target.value };
+    // };
   };
 
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
+
+    // ALTERNATIVA
+    // setUserInput = (prevState) => {
+    //   return { ...prevState, enteredDate: event.target.value };
+    // };
   };
 
   return (
