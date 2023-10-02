@@ -26,6 +26,11 @@ const App = () => {
     },
   ];
 
+  const addExpenseHandler = (expense) => {
+    console.log('In App.js');
+    console.log(expense);
+  };
+
   // // forma imperativa (antes de react)
   // const parag = document.createElement('p');
   // parag.textContent = 'This is also visible!!!';
@@ -37,7 +42,7 @@ const App = () => {
       <h2>Let's get started!</h2>
       {/* ALTERNATIVA
       <ExpenseItem expense={expenses[0]}></ExpenseItem> */}
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses}></Expenses>
     </div>
   );

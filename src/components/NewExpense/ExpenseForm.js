@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import './ExpenseForm.css';
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
@@ -63,7 +63,16 @@ const ExpenseForm = () => {
       amount: enteredAmount,
       date: new Date(enteredDate),
     };
-    console.log(expenseData);
+    //console.log(expenseData);
+
+    // AQUI SE EJECUTA EL LISTENER DEFINIDO EN LA ETIQUETA ExpenseForm en NewExpense.js
+    // SE PUEDE EJECUTAR LA FUNCION, AUN SIENDO DEFINIDA ESTA EN OTRO COMPONENTE
+    // YA QUE FUE ENVIADA COMO POINTER
+    // <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} /> POR ESO NO LLEVA PARENTESIS LA FUNCION
+
+    // SE EJECUTA LA FUNCION DEL OTRO COMPONENTE, CON EL OBJETO DEL FORM, SE LO ENVIA
+    props.onSaveExpenseData(expenseData);
+
     setEnteredTitle('');
     setEnteredAmount('');
     setEnteredDate('');
