@@ -8,15 +8,15 @@ import ExpensesList from './ExpensesList';
 const Expenses = (props) => {
   const [filteredYear, setFilteredYear] = useState('2020');
   // para un state derivado o computado, basta con usar una variable adicional
-  let filterInfoText = '2019,2021 & 2022';
+  // let filterInfoText = '2019,2021 & 2022';
 
-  if (filteredYear === '2019') {
-    filterInfoText = '2020,2021 & 2022';
-  } else if (filteredYear === '2021') {
-    filterInfoText = '2019,2020 & 2022';
-  } else {
-    filterInfoText = '2019,2020 & 2021';
-  }
+  // if (filteredYear === '2019') {
+  //   filterInfoText = '2020,2021 & 2022';
+  // } else if (filteredYear === '2021') {
+  //   filterInfoText = '2019,2020 & 2022';
+  // } else {
+  //   filterInfoText = '2019,2020 & 2021';
+  // }
   // ya no es necesario usar otro State para un State derivado o computado
   //const [filterInfoText, setFilterInfoText] = useState('2019, 2021 & 2022');
 
@@ -34,7 +34,8 @@ const Expenses = (props) => {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      <p>Data for years {filterInfoText} is hidden</p>
+      {/* <p>Data for years {filterInfoText} is hidden</p> */}
+
       {/* AQUI SE DEFINE POR EL CONDICIONAL QUE SE VA A RENDERIZAR */}
       <ExpensesList items={filteredExpenses} />
     </Card>

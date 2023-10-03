@@ -7,7 +7,7 @@ const ExpenseForm = (props) => {
   const [enteredAmount, setEnteredAmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
 
-  // ALTERNATIVA USAR oneState
+  // ALTERNATIVA USAR UN SOLO useState
   // const [userInput, setUserInput] = useState({
   //   enteredTitle: '',
   //   enteredAmount: '',
@@ -44,17 +44,6 @@ const ExpenseForm = (props) => {
     // };
   };
 
-  // ALTERNATIVA...USO DE FUNCION UNICA COMPARTIDA HANDLER
-  // const inputChangeHandler = (identificador, value) => {
-  //   if (identificador === 'title') {
-  //     setEnteredTitle(value);
-  //   } else if (identificador === 'date') {
-  //     setEnteredDate(value);
-  //   } else {
-  //     setEnteredAmount(value);
-  //   }
-  // };
-
   const submitHandler = (event) => {
     event.preventDefault();
 
@@ -90,12 +79,6 @@ const ExpenseForm = (props) => {
             value={enteredTitle}
             onChange={titleChangeHandler}
           />
-          {/* <input
-            type="text"
-            onChange={(event) =>
-              inputChangeHandler('title', event.target.value)
-            }
-          /> */}
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
@@ -108,14 +91,6 @@ const ExpenseForm = (props) => {
             value={enteredAmount}
             onChange={amountChangeHandler}
           />
-          {/* <input
-            type="number"
-            min="0.01"
-            step="0.01"
-            onChange={(event) =>
-              inputChangeHandler('amount', event.target.value)
-            }
-          /> */}
         </div>
         <div className="new-expense__control">
           <label>Date</label>
@@ -128,15 +103,10 @@ const ExpenseForm = (props) => {
             value={enteredDate}
             onChange={dateChangeHandler}
           />
-          {/* <input
-            type="date"
-            min="2019-01-01"
-            max="2022-12-31"
-            onChange={(event) => inputChangeHandler('date', event.target.value)}
-          /> */}
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="cancel">Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>

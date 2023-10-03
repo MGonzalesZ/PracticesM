@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import ExpenseForm from './ExpenseForm';
 import './NewExpense.css';
@@ -10,7 +10,8 @@ const NewExpense = (props) => {
       id: Math.random().toString(),
     };
     //console.log(expenseData);
-    props.onAddExpense(expenseData);
+    props.onSaveExpenseData(expenseData);
+    props.onSubmitted();
   };
   return (
     <div className="new-expense">

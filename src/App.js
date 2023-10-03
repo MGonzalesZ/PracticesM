@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import ExpenseFormCondition from './components/NewExpense/ExpenseFormCondition';
 import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses';
 const initial_expenses = [
@@ -46,20 +46,12 @@ const App = () => {
   return (
     <div>
       <h2>Let's get started!</h2>
-      {/* ALTERNATIVA
-      <ExpenseItem expense={expenses[0]}></ExpenseItem> */}
-      <NewExpense onAddExpense={addExpenseHandler} />
+
+      {/* <NewExpense onAddExpense={addExpenseHandler} /> */}
+      <ExpenseFormCondition onAddExpense={addExpenseHandler} />
       <Expenses items={expenses}></Expenses>
     </div>
   );
-
-  // como seria sin usar JSX, usando el objeto REACT
-  // return React.createElement(
-  //   'div',
-  //   {},
-  //   React.createElement('h2', {}, "Let's get started!"),
-  //   React.createElement(Expenses, { items: expenses })
-  // );
 };
 
 export default App;
