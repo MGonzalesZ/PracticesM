@@ -4,6 +4,7 @@ import Card from '../UI/Card';
 import './Expenses.css';
 import ExpensesFilter from './ExpensesFilter';
 import ExpensesList from './ExpensesList';
+import ExpensesChart from './ExpensesChart';
 
 const Expenses = (props) => {
   const [filteredYear, setFilteredYear] = useState('2020');
@@ -36,6 +37,7 @@ const Expenses = (props) => {
       />
       {/* <p>Data for years {filterInfoText} is hidden</p> */}
 
+      <ExpensesChart expenses={filteredExpenses} />
       {/* AQUI SE DEFINE POR EL CONDICIONAL QUE SE VA A RENDERIZAR */}
       <ExpensesList items={filteredExpenses} />
     </Card>
