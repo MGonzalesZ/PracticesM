@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ExpenseFormCondition from './components/NewExpense/ExpenseFormCondition';
 import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses';
 const initial_expenses = [
@@ -46,9 +45,7 @@ const App = () => {
   return (
     <div>
       <h2>Let's get started!</h2>
-
-      {/* <NewExpense onAddExpense={addExpenseHandler} /> */}
-      <ExpenseFormCondition onAddExpense={addExpenseHandler} />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses}></Expenses>
     </div>
   );
